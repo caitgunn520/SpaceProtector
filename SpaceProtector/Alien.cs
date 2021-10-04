@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SpaceProtector
 {
-    class Alien
+    public class Alien
     {
+        public int x, y, size, speed;
+
+        
     }
 }
