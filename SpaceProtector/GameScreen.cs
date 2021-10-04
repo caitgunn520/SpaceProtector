@@ -44,7 +44,7 @@ namespace SpaceProtector
         //TODO graphics
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
-
+            e.Graphics.FillRectangle(blueBrush, )
         }
     }
 }
