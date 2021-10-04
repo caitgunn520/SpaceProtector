@@ -43,6 +43,7 @@ namespace SpaceProtector
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(402, 421);
+            this.Load += new System.EventHandler(this.GameScreen_Load);
             this.ResumeLayout(false);
 
         }

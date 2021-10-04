@@ -16,7 +16,12 @@ namespace SpaceProtector
         {
             InitializeComponent();
         }
-
+        
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+            //TODO create spaceship
+        }
+        
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             //TODO move alien
