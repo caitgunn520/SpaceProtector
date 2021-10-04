@@ -20,6 +20,7 @@ namespace SpaceProtector
         private void GameScreen_Load(object sender, EventArgs e)
         {
             //TODO create spaceship
+            SpaceShip spaceShip = new SpaceShip(this.Width / 2, 400, 10, 20, 30);
         }
         
         private void gameTimer_Tick(object sender, EventArgs e)
