@@ -35,6 +35,7 @@ namespace SpaceProtector
         }
 
         //TODO list to hold aliens
+        List<Alien> alienList = new List<Alien>();
 
         //TODO track score
     }
