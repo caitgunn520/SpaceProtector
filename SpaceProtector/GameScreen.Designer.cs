@@ -44,6 +44,7 @@ namespace SpaceProtector
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(402, 421);
             this.Load += new System.EventHandler(this.GameScreen_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameScreen_Paint);
             this.ResumeLayout(false);
 
         }

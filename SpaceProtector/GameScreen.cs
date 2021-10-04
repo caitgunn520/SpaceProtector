@@ -17,6 +17,8 @@ namespace SpaceProtector
             InitializeComponent();
         }
         
+        SolidBrush blueBrush = new SolidBrush(Color.Blue);
+
         private void GameScreen_Load(object sender, EventArgs e)
         {
             //TODO create spaceship
@@ -28,7 +30,6 @@ namespace SpaceProtector
             //TODO move alien
             //TODO move spaceship
 
-            //TODO colour objects
             //TODO sound effects
 
             //TODO when alien touches bottom of screen or spaceship end game - player loses
@@ -39,5 +40,11 @@ namespace SpaceProtector
         List<Alien> alienList = new List<Alien>();
 
         //TODO track score
+
+        //TODO graphics
+        private void GameScreen_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
