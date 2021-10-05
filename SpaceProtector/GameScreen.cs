@@ -24,11 +24,43 @@ namespace SpaceProtector
         bool leftDown;
         bool rightDown;
         bool spaceDown;
+        
+        private void GameScreen_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    leftDown = true;
+                    break;
+                case Keys.Right:
+                    rightDown = true;
+                    break;
+                case Keys.Space:
+                    spaceDown = true;
+                    break;
+            }
+        }
 
+        private void GameScreen_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    leftDown = false;
+                    break;
+                case Keys.Right:
+                    rightDown = false;
+                    break;
+                case Keys.Space:
+                    spaceDown = false;
+                    break;
+            }
+        }
+        
         private void GameScreen_Load(object sender, EventArgs e)
         {
             // create spaceship
-            spaceShip = new SpaceShip(this.Width / 2, 350, 30, 15, 10);
+            spaceShip = new SpaceShip(this.Width / 2, 350, 30, 15, 30);
 
             // set booleans to false
             leftDown = false;
@@ -68,38 +100,6 @@ namespace SpaceProtector
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(blueBrush, spaceShip.x, spaceShip.y, spaceShip.width, spaceShip.length);
-        }
-
-        private void GameScreen_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                    leftDown = true;
-                    break;
-                case Keys.Right:
-                    rightDown = true;
-                    break;
-                case Keys.Space:
-                    spaceDown = true;
-                    break;
-            }
-        }
-
-        private void GameScreen_KeyUp(object sender, KeyEventArgs e)
-        {
-             switch (e.KeyCode)
-            {
-                case Keys.Left:
-                    leftDown = false;
-                    break;
-                case Keys.Right:
-                    rightDown = false;
-                    break;
-                case Keys.Space:
-                    spaceDown = false;
-                    break;
-            }    
         }
     }
 }

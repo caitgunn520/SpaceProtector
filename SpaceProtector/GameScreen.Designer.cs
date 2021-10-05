@@ -53,6 +53,6 @@ namespace SpaceProtector
 
         #endregion
 
-        private System.Windows.Forms.Timer gameTimer;
+        public System.Windows.Forms.Timer gameTimer;
     }
 }
