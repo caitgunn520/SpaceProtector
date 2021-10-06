@@ -16,14 +16,39 @@ namespace SpaceProtector
         {
             InitializeComponent();
         }
-        
+
         SolidBrush blueBrush = new SolidBrush(Color.Blue);
+        SolidBrush redBrush = new SolidBrush(Color.Red);
 
         SpaceShip spaceShip;
 
         bool leftDown;
         bool rightDown;
         bool spaceDown;
+
+        // list to hold aliens
+        List<Alien> alienList = new List<Alien>();
+        
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+            // create spaceship
+            spaceShip = new SpaceShip(this.Width / 2, 350, 30, 15, 30);
+
+            // create aliens
+            for (int i = 0; i < 10; i++)
+            {
+                Alien alien = new Alien(i * 40 + 20, 20, 20, 10);
+                alienList.Add(alien);
+            }
+
+            // set booleans to false
+            leftDown = false;
+            rightDown = false;
+            spaceDown = false;
+
+            //turn on the game timer
+            gameTimer.Enabled = true;
+        }
         
         private void GameScreen_KeyDown(object sender, KeyEventArgs e)
         {
@@ -57,20 +82,6 @@ namespace SpaceProtector
             }
         }
         
-        private void GameScreen_Load(object sender, EventArgs e)
-        {
-            // create spaceship
-            spaceShip = new SpaceShip(this.Width / 2, 350, 30, 15, 30);
-
-            // set booleans to false
-            leftDown = false;
-            rightDown = false;
-            spaceDown = false;
-
-            //turn on the game timer
-            gameTimer.Enabled = true;
-        }
-        
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             //TODO move alien
@@ -91,15 +102,17 @@ namespace SpaceProtector
             Refresh();
         }
 
-        // list to hold aliens
-        List<Alien> alienList = new List<Alien>();
-
         //TODO track score
 
-        //TODO graphics
+        // graphics
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(blueBrush, spaceShip.x, spaceShip.y, spaceShip.width, spaceShip.length);
+
+            foreach (Alien alien in alienList)
+            {
+                e.Graphics.FillRectangle(redBrush, alien.x, alien.y, alien.size, alien.size);
+            }    
         }
     }
 }
