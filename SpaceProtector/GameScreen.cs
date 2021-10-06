@@ -20,6 +20,8 @@ namespace SpaceProtector
         SolidBrush blueBrush = new SolidBrush(Color.Blue);
         SolidBrush redBrush = new SolidBrush(Color.Red);
 
+        int score;
+
         SpaceShip spaceShip;
 
         bool leftDown;
@@ -46,8 +48,11 @@ namespace SpaceProtector
             rightDown = false;
             spaceDown = false;
 
-            //turn on the game timer
+            // turn on the game timer
             gameTimer.Enabled = true;
+
+            // set score to zero
+            score = 0;
         }
         
         private void GameScreen_KeyDown(object sender, KeyEventArgs e)
