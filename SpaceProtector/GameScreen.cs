@@ -47,8 +47,6 @@ namespace SpaceProtector
                 alienList.Add(alien);
             }
 
-
-
             // set booleans to false
             leftDown = false;
             rightDown = false;
@@ -111,6 +109,12 @@ namespace SpaceProtector
             {
                 Bullet bullet = new Bullet(5, 30, spaceShip.x + (spaceShip.width / 2), spaceShip.y - (spaceShip.length / 2));
                 bulletList.Add(bullet);
+            }
+
+            //TODO make bullets move
+            foreach (Bullet bullet in bulletList)
+            {
+                bullet.y -= bullet.speed;
             }
 
             //TODO sound effects
