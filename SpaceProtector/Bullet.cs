@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceProtector
 {
-    class Bullet
+    public class Bullet
     {
         public int size, speed, x, y;
 

@@ -111,15 +111,19 @@ namespace SpaceProtector
                 bulletList.Add(bullet);
             }
 
-            //TODO make bullets move
+            // make bullets move
             foreach (Bullet bullet in bulletList)
             {
                 bullet.y -= bullet.speed;
+                
+                // delete offscreen bullets
+                if (bullet.y < 0)
+                {
+                    bulletList.Remove(bullet);
+                }
             }
 
             //TODO sound effects
-
-            //TODO delete offscreen bullets
 
             //TODO when alien touches bottom of screen or spaceship end game - player loses
             //TODO when all aliens die end game - player wins
@@ -127,6 +131,25 @@ namespace SpaceProtector
         }
 
         //TODO track score
+
+        public void BulletsAliensCollision()
+        {
+            // index values of all bullets that collide with an alien
+            List<int> bulletsToRemove = new List<int>();
+
+            // index values of all aliens that collide with a bullet
+            List<int> aliensToRemove = new List<int>();
+
+            foreach (Bullet b in bulletList)
+            {
+                foreach (Alien a in alienList)
+                {
+                    // uses collision method in alien class and returns true
+                    // if alien "a" has collided with bullet "b"
+                    if 
+                }
+            }
+        }
 
         // graphics
         private void GameScreen_Paint(object sender, PaintEventArgs e)
