@@ -31,6 +31,9 @@ namespace SpaceProtector
 
         // list to hold aliens
         List<Alien> alienList = new List<Alien>();
+
+        // list to hold bullets
+        List<Bullet> bulletList = new List<Bullet>();
         
         private void GameScreen_Load(object sender, EventArgs e)
         {
@@ -44,8 +47,8 @@ namespace SpaceProtector
                 alienList.Add(alien);
             }
 
-            //TODO make ship shoot bullets if spacebar is pressed
-            
+
+
             // set booleans to false
             leftDown = false;
             rightDown = false;
@@ -102,8 +105,17 @@ namespace SpaceProtector
             {
                 spaceShip.x += spaceShip.speed;
             }
+            
+            // make ship shoot bullets if spacebar is pressed
+            if (spaceDown)
+            {
+                Bullet bullet = new Bullet(5, 30, spaceShip.x + (spaceShip.width / 2), spaceShip.y - (spaceShip.length / 2));
+                bulletList.Add(bullet);
+            }
 
             //TODO sound effects
+
+            //TODO delete offscreen bullets
 
             //TODO when alien touches bottom of screen or spaceship end game - player loses
             //TODO when all aliens die end game - player wins
@@ -120,7 +132,12 @@ namespace SpaceProtector
             foreach (Alien alien in alienList)
             {
                 e.Graphics.FillRectangle(redBrush, alien.x, alien.y, alien.size, alien.size);
-            }    
+            }
+
+            foreach (Bullet bullet in bulletList)
+            {
+                e.Graphics.FillRectangle(blackBrush, bullet.x, bullet.y, bullet.size, bullet.size);
+            }
         }
     }
 }
