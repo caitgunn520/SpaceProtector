@@ -85,7 +85,7 @@ namespace SpaceProtector
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             //TODO move alien
-            //TODO move spaceship
+            //TODO move spaceship if left or right button is being pressed
             if (leftDown)
             {
                 spaceShip.x -= spaceShip.speed;
