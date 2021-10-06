@@ -55,7 +55,7 @@ namespace SpaceProtector
             score = 0;
         }
         
-        private void GameScreen_KeyDown(object sender, KeyEventArgs e)
+        private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
             {
@@ -70,7 +70,7 @@ namespace SpaceProtector
                     break;
             }
         }
-
+        
         private void GameScreen_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -119,5 +119,7 @@ namespace SpaceProtector
                 e.Graphics.FillRectangle(redBrush, alien.x, alien.y, alien.size, alien.size);
             }    
         }
+
+        
     }
 }
