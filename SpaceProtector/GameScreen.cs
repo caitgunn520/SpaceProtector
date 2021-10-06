@@ -19,6 +19,7 @@ namespace SpaceProtector
 
         SolidBrush blueBrush = new SolidBrush(Color.Blue);
         SolidBrush redBrush = new SolidBrush(Color.Red);
+        SolidBrush blackBrush = new SolidBrush(Color.Black);
 
         int score;
 
@@ -34,7 +35,7 @@ namespace SpaceProtector
         private void GameScreen_Load(object sender, EventArgs e)
         {
             // create spaceship
-            spaceShip = new SpaceShip(this.Width / 2, 350, 30, 15, 30);
+            spaceShip = new SpaceShip(this.Width / 2, 350, 30, 15, 10);
 
             // create aliens
             for (int i = 0; i < 10; i++)
@@ -43,6 +44,8 @@ namespace SpaceProtector
                 alienList.Add(alien);
             }
 
+            //TODO make ship shoot bullets if spacebar is pressed
+            
             // set booleans to false
             leftDown = false;
             rightDown = false;
@@ -90,7 +93,7 @@ namespace SpaceProtector
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             //TODO move alien
-            //TODO move spaceship if left or right button is being pressed
+            // move spaceship if left or right button is being pressed
             if (leftDown)
             {
                 spaceShip.x -= spaceShip.speed;
@@ -119,7 +122,5 @@ namespace SpaceProtector
                 e.Graphics.FillRectangle(redBrush, alien.x, alien.y, alien.size, alien.size);
             }    
         }
-
-        
     }
 }
