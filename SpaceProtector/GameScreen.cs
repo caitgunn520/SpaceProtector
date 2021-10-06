@@ -146,7 +146,6 @@ namespace SpaceProtector
                 {
                     // uses collision method in alien class and returns true
                     // if alien "a" has collided with bullet "b"
-                    if 
                 }
             }
         }
