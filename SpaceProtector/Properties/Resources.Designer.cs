@@ -63,6 +63,15 @@ namespace SpaceProtector.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream enemy_destroyed {
+            get {
+                return ResourceManager.GetStream("enemy_destroyed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream shot {
             get {
                 return ResourceManager.GetStream("shot", resourceCulture);

@@ -129,8 +129,6 @@ namespace SpaceProtector
             }
 
             BulletsAliensCollision();
-            
-            //TODO sound effects
 
             //TODO when alien touches bottom of screen or spaceship end game - player loses
             //TODO when all aliens die end game - player wins
@@ -161,6 +159,10 @@ namespace SpaceProtector
                     // if alien "a" has collided with bullet "b"
                     if (a.BullColl(b))
                     {
+                        // plays a sound effect
+                        SoundPlayer defeatNoise = new SoundPlayer(Properties.Resources.enemy_destroyed);
+                        defeatNoise.Play();
+                        
                         // checks if bullet is already in remove list
                         if (!bulletsToRemove.Contains(bulletList.IndexOf(b)))
                         {
