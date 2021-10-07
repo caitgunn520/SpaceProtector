@@ -21,7 +21,7 @@ namespace SpaceProtector
         {
             // start new game
             Form f = this.FindForm();
-            
+
             GameScreen gs = new GameScreen();
             f.Controls.Add(gs);
 
