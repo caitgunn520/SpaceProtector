@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -107,6 +108,10 @@ namespace SpaceProtector
             // make ship shoot bullets if spacebar is pressed
             if (spaceDown)
             {
+                // bullet sound
+                SoundPlayer shotPlayer = new SoundPlayer(Properties.Resources.shot);
+                shotPlayer.Play();
+                
                 Bullet bullet = new Bullet(5, 20, spaceShip.x + (spaceShip.width / 2), spaceShip.y - (spaceShip.length / 2));
                 bulletList.Add(bullet);
             }
@@ -131,6 +136,7 @@ namespace SpaceProtector
             //TODO when all aliens die end game - player wins
             if (score >= 10)
             {
+                gameTimer.Enabled = false;
                 GameWin();
             }
 
